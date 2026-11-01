@@ -1,79 +1,88 @@
-/* General Styles */
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1d2939;
+  background: #eef3f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.app {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #d8e0ea;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgb(23 43 77 / 8%);
 }
 
 h1 {
-  text-align: center;
-  margin: 20px 0;
+  margin-top: 0;
 }
 
-/* Input Field and Button */
-#city-input {
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+form {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
 }
 
-#fetch-weather {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+input,
+button {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  border-radius: 0.35rem;
+}
+
+input {
+  max-width: 14rem;
+  border: 1px solid #98a6b8;
+}
+
+button {
+  justify-self: start;
+  color: white;
+  background: #145da0;
+  border: 0;
   cursor: pointer;
 }
 
-#fetch-weather:hover {
-  background-color: #0056b3;
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
-/* Weather Display Section */
-#weather-display {
-  margin: 20px auto;
-  padding: 10px;
-  width: 90%;
-  max-width: 600px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#alerts-display {
+  line-height: 1.6;
 }
 
-/* Error Message */
+#alerts-display li + li {
+  margin-top: 0.5rem;
+}
+
 #error-message {
-  color: red;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  color: #8c1d18;
+  background: #fff0ef;
+  border: 1px solid #e6a5a1;
+  border-radius: 0.35rem;
 }
 
-/* Hidden Class for Error Handling */
 .hidden {
   display: none;
 }
 
-/* BONUS: Loading Spinner */
-#loading-spinner {
-  display: none;
-  margin: 20px auto;
-  text-align: center;
-}
-
-#loading-spinner img {
-  width: 50px;
-  height: 50px;
+@media (max-width: 520px) {
+  .app {
+    padding: 1.25rem;
+  }
 }
